@@ -2,9 +2,6 @@
 #  Fiesta de Cóctel
  ## Introducción
 En este trabajo desarrollaremos la práctica de “la fiesta de cóctel”, esta consiste en grabar diferentes conversaciones desde diferentes micrófonos en una reunión, en nuestro caso hicimos uso de la aplicación grabadora de voz desde los celulares, en un cuarto a una distancia de aproximadamente 2 metros cada uno de los micrófonos que se encontraban en un punto central, esto permitió la captura de tres audios guardados desde tres diferentes celulares de aproximadamente 50 segundos cada audio. 
-## Preparacion y Calculos 
-![Imagen de WhatsApp 2025-09-25 a las 10 31 17_5ec5b131](https://github.com/user-attachments/assets/c66bc535-34e9-4c40-870a-9b1568f0355e)
-![Imagen de WhatsApp 2025-09-25 a las 08 47 01_a822fd87](https://github.com/user-attachments/assets/3d2d0d23-2ef8-4642-9b31-caee67cd0a54)
 
 # Marco Teorico.
 ## Tranformada rápida de Fourier
@@ -16,6 +13,10 @@ Esta es una técnica que permite mejorar la captación de señal en una direcci�
 ## Diferencia entre ICA y BEAMFORMING
 Podemos decir que ICA intenta separar múltiples señales que han sido mezcladas mientras que beamforming se enfoca en mejorar la señal desde una dirección específica. La siguiente tabla explica mucho mejor lo anterior mencionado.
  ![{9636A8FF-1E1A-44F0-98B7-2692BC0D1C35}](https://github.com/user-attachments/assets/74c10c3d-5310-40d1-80ec-72967d3cf53d)
+ ## Preparacion y Calculos 
+![Imagen de WhatsApp 2025-09-25 a las 10 31 17_5ec5b131](https://github.com/user-attachments/assets/c66bc535-34e9-4c40-870a-9b1568f0355e)
+![Imagen de WhatsApp 2025-09-25 a las 08 47 01_a822fd87](https://github.com/user-attachments/assets/3d2d0d23-2ef8-4642-9b31-caee67cd0a54)
+
  # Desarrollo.
 En este laboratorio se trabajó con tres grabaciones de voz capturadas por distintos micrófonos, con el fin de realizar un análisis en el dominio del tiempo y en el dominio de la frecuencia. Además, se aplicó una técnica de beamforming para combinar las señales y mejorar la calidad del audio final mediante reducción de ruido.
 

@@ -96,12 +96,21 @@ sd.wait()  # Se queda esperando hasta que acabe el audio
 print("Reproducción terminada.")
 ```
 # Conclusiones
-
+1.	La práctica permitió evidenciar el efecto de la posición relativa entre micrófonos y hablantes en la calidad de la señal registrada. A menor distancia, mayor amplitud y mejor relación señal/ruido (SNR).
+2.	El micrófono 2, ubicado a 32,5 cm, fue el que registró la señal con mayor claridad y energía, confirmando que la proximidad al hablante favorece la captura de los armónicos y la inteligibilidad de la voz.
+3.	El micrófono 1, a 35 cm, presentó una señal con características similares, aunque con menor intensidad respecto al micrófono 2, mostrando que pequeñas variaciones de distancia pueden impactar el resultado.
+4.	El micrófono 3, situado a 66 cm, captó una señal más débil y con mayor proporción de ruido, lo que demuestra cómo la distancia aumenta la atenuación y dificulta la separación posterior de las fuentes.
+5.	En el análisis de frecuencia, todas las señales mostraron concentración de energía en el rango 100 Hz–3 kHz, característico de la voz humana, con picos alrededor de 100–300 Hz correspondientes al fundamental y armónicos.
+6.	La práctica simuló adecuadamente el problema de la fiesta de cóctel, ya que los micrófonos captaron mezclas de varias voces. Esto permitió comprender la importancia de aplicar técnicas de procesamiento digital como FFT, beamforming o ICA para aislar una fuente específica.
 
 # Librerías utilizadas
 
 numpy
+
 matplotlib
+
 librosa
+
 soundfile
+
 noisereduce

@@ -85,7 +85,7 @@ plt.show()
 ```
 El cual nos permitio realizar una gráfica comparando la señal original (promedio simple) contra la señal procesada (beamformed denoised).
 <img width="1017" height="546" alt="image" src="https://github.com/user-attachments/assets/9eabc573-5a4a-4b7d-a966-834087fff500" />
-
+La gráfica compara la señal original (beamformed) con la señal procesada mediante denoising, mostrando que ambas tienen la misma duración pero difieren notablemente en amplitud: la señal original presenta mayor variabilidad y picos elevados asociados al habla y al ruido, mientras que la procesada exhibe una forma más contenida y uniforme, conservando la estructura principal de la voz pero con menor presencia de interferencias; esto implica una mejora en la relación señal/ruido y, por ende, en la claridad perceptual, aunque con una energía global reducida que podría requerir normalización para aplicaciones prácticas.
 Y obtuvimos la reproducción del archivo final para verificar la mejora perceptual en la calidad del audio con nuestro codigo:
 ```python
 import sounddevice as sd

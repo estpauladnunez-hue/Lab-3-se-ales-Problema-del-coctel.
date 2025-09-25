@@ -95,3 +95,13 @@ sd.play(muestras_beamformed_denoised, sample_rate)
 sd.wait()  # Se queda esperando hasta que acabe el audio
 print("Reproducción terminada.")
 ```
+# Conclusiones
+
+
+# Librerías utilizadas
+
+numpy
+matplotlib
+librosa
+soundfile
+noisereduce

@@ -1,7 +1,7 @@
-# Lab-3-se-ales-Problema-del-coctel.
+
 #  Fiesta de Cóctel
  ## Introducción
-En este trabajo desarrollaremos la práctica de “la fiesta de cóctel”, esta consiste en grabar diferentes conversaciones desde diferentes micrófonos en una reunión, en nuestro caso hicimos uso de la aplicación grabadora de voz desde los celulares, en un cuarto insonoro a una distancia de aproximadamente 2 metros cada uno de los micrófonos que se encontraban en un punto central, esto permitió la captura de tres audios guardados desde tres diferentes celulares de aproximadamente 50 segundos cada audio. 
+En este trabajo desarrollaremos la práctica de “la fiesta de cóctel”, esta consiste en grabar diferentes conversaciones desde diferentes micrófonos en una reunión, en nuestro caso hicimos uso de la aplicación grabadora de voz desde los celulares, en un cuarto a una distancia de aproximadamente 2 metros cada uno de los micrófonos que se encontraban en un punto central, esto permitió la captura de tres audios guardados desde tres diferentes celulares de aproximadamente 50 segundos cada audio. 
 # Marco Teorico.
 ## Tranformada rápida de Fourier
 La Transformación rápida de Fourier, FFT para abreviar, es un importante método de medición en la tecnología de medición de audio y acústica. Descompone una señal en sus componentes espectrales individuales y así proporciona información sobre su composición. Los FFT se utilizan para el análisis de errores, el control de calidad y la monitorización de las condiciones de las máquinas o sistemas. 
@@ -45,10 +45,18 @@ plt.title("Espectro de Frecuencia")
 
 De esto obtuvimos como resultado una imagen con dos gráficas por cada micrófono (forma de onda y espectro de frecuencia) y de las cuales pudimos observar cómo cada grabación presentaba diferentes características de amplitud y contenido en frecuencia.
 <img width="1189" height="593" alt="image" src="https://github.com/user-attachments/assets/0130dc15-c414-46d6-b915-d7b7e92002d5" />
+La señal capturada por el micrófono 1 tiene una duración aproximada de 50 segundos y corresponde a una grabación de voz humana en un ambiente controlado. En el dominio del tiempo se observan variaciones de amplitud propias del habla, con picos más marcados en los instantes de mayor intensidad y pausas intermedias que reflejan los silencios naturales. La señal no presenta saturación, lo cual indica que la grabación se realizó con un nivel adecuado de ganancia.
+
+En el dominio de la frecuencia, el espectro obtenido mediante la Transformada Rápida de Fourier (FFT) muestra la mayor concentración de energía entre los 100 Hz y 3 kHz, rango característico de la voz humana. Se distinguen picos pronunciados alrededor de 100–300 Hz que corresponden al fundamental y primeros armónicos de la voz, mientras que las frecuencias más altas representan consonantes y fricativas con menor magnitud. El nivel de ruido fuera de la banda principal es bajo, lo cual evidencia una buena relación señal/ruido gracias a la proximidad del hablante (~38 cm) y a las condiciones del recinto.
 
 <img width="1189" height="593" alt="image" src="https://github.com/user-attachments/assets/bb3fefdc-8cc6-46b4-87c9-92fc3801726e" />
+La señal registrada por el micrófono 2 muestra una duración cercana a los 55 segundos, con actividad marcada desde los primeros segundos y una amplitud consistente a lo largo de la grabación. Se evidencian variaciones de intensidad y pausas cortas, propias del habla continua. En el dominio de la frecuencia, la FFT revela un pico de energía dominante alrededor de los 100–300 Hz, correspondiente al fundamental de la voz, acompañado de armónicos distribuidos hasta aproximadamente los 3 kHz. La magnitud espectral en este micrófono es más elevada que en el micrófono 1, lo cual indica una mayor captación de energía, posiblemente por la cercanía del hablante (32,5 cm). En conclusión, la señal del micrófono 2 presenta una buena calidad, alta energía y un espectro claro para análisis y separación de fuentes.
+
 
 <img width="1189" height="593" alt="image" src="https://github.com/user-attachments/assets/68e1dab4-b662-4c67-83fe-f5735ef87254" />
+La señal capturada por el micrófono 3 tiene también una duración aproximada de 50 segundos, pero su amplitud es más baja en comparación con los micrófonos 1 y 2. Esto se debe a la mayor distancia con respecto al hablante (66 cm), lo que genera una señal más débil y con menor relación señal/ruido. En el dominio de la frecuencia, la energía se concentra igualmente entre 100 Hz y 3 kHz, con varios picos que reflejan la estructura armónica de la voz. Sin embargo, la magnitud general es menor, lo que evidencia atenuación por la distancia y mayor presencia de ruido relativo. En conclusión, la señal del micrófono 3, aunque útil para análisis, requiere mayor procesamiento (ej. filtrado o beamforming) para alcanzar la misma claridad que los otros dos micrófonos.
+
+
 
 Para mejorar la señal de voz, se aplicó un método de beamforming simple, que consiste en promediar las tres señales después de recortarlas a la misma duración. Posteriormente, se aplicó un filtro de reducción de ruido (noisereduce), gracias a esta parte de nuestro codigo:
 ```python
@@ -82,5 +90,8 @@ sd.play(muestras_beamformed_denoised, sample_rate)
 sd.wait()  # Se queda esperando hasta que acabe el audio
 print("Reproducción terminada.")
 ```
+## Preparacion y Calculos 
+![Imagen de WhatsApp 2025-09-25 a las 10 31 17_5ec5b131](https://github.com/user-attachments/assets/c66bc535-34e9-4c40-870a-9b1568f0355e)
+![Imagen de WhatsApp 2025-09-25 a las 08 47 01_a822fd87](https://github.com/user-attachments/assets/3d2d0d23-2ef8-4642-9b31-caee67cd0a54)
 
 

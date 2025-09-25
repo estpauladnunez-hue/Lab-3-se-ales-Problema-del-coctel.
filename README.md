@@ -16,15 +16,17 @@ Podemos decir que ICA intenta separar múltiples señales que han sido mezcladas
 En este laboratorio se trabajó con tres grabaciones de voz capturadas por distintos micrófonos, con el fin de realizar un análisis en el dominio del tiempo y en el dominio de la frecuencia. Además, se aplicó una técnica de beamforming para combinar las señales y mejorar la calidad del audio final mediante reducción de ruido.
 
 Como primera parte,se cargaron las grabaciones desde archivos .wav usando la librería librosa. A cada señal se le calculó su SNR (Signal-to-Noise Ratio) para medir la calidad del audio en dB.
-´´´python
+```python
 y, sr = librosa.load(ruta, sr=None)
 snr = calcular_snr(y)
 print(f"SNR de {nombres[i]}: {snr:.2f} dB")
-´´´
+```
 En donde los resultados obtenidos fueron:
+
 <img width="206" height="46" alt="image" src="https://github.com/user-attachments/assets/db47b1f6-f302-47d5-a398-d484b76decd9" />
+
 Luego, cada señal fue graficada enh dos representaciones utilizando nuestra parte del codigo:
-´´´python
+```python
 plt.subplot(2,1,1)
 librosa.display.waveshow(y, sr=sr)
 plt.title("Forma de onda")
@@ -36,7 +38,7 @@ freqs = np.fft.fftfreq(N, T)[:N//2]
 plt.subplot(2,1,2)
 plt.semilogx(freqs, np.abs(fft_values[:N//2]))
 plt.title("Espectro de Frecuencia")
-´´´
+```
 1.Forma de onda en el tiempo → permite observar cómo varía la amplitud de la señal con el tiempo.
 2.Espectro de frecuencias (FFT) → muestra la distribución de la energía en función de las frecuencias presentes en la señal.
 De esto obtuvimos como resultado una imagen con dos gráficas por cada micrófono (forma de onda y espectro de frecuencia) y de las cuales pudimos observar cómo cada grabación presentaba diferentes características de amplitud y contenido en frecuencia.
@@ -47,15 +49,15 @@ De esto obtuvimos como resultado una imagen con dos gráficas por cada micrófon
 <img width="1189" height="593" alt="image" src="https://github.com/user-attachments/assets/68e1dab4-b662-4c67-83fe-f5735ef87254" />
 
 Para mejorar la señal de voz, se aplicó un método de beamforming simple, que consiste en promediar las tres señales después de recortarlas a la misma duración. Posteriormente, se aplicó un filtro de reducción de ruido (noisereduce), gracias a esta parte de nuestro codigo:
-´´´python
+```python
 muestras_beamformed = np.mean(muestras_recortadas, axis=0)
 muestras_beamformed_denoised = nr.reduce_noise(
     y=muestras_beamformed, sr=sample_rate, stationary=True)
-´´´
+```
 Que nos dio como resultados la señal combinada con mejor relacion señal-ruido y el archivo final exportado como .wav para escuchar la señal filtrada.
 
 Para la parte final usamos esta parte del codigo:
-´´´python
+```python
 plt.figure(figsize=(12, 6))
 plt.plot(muestras_beamformed, label="Señal Beamformed Original", alpha=0.7)
 plt.plot(muestras_beamformed_denoised, label="Señal Beamformed Denoised", alpha=0.7)
@@ -65,18 +67,18 @@ plt.ylabel("Amplitud")
 plt.legend()
 plt.grid()
 plt.show()
-´´´
+```
 El cual nos permitio realizar una gráfica comparando la señal original (promedio simple) contra la señal procesada (beamformed denoised).
 <img width="1017" height="546" alt="image" src="https://github.com/user-attachments/assets/9eabc573-5a4a-4b7d-a966-834087fff500" />
 
 Y obtuvimos la reproducción del archivo final para verificar la mejora perceptual en la calidad del audio con nuestro codigo:
-´´´python
+```python
 import sounddevice as sd
 
 print("\nReproduciendo la señal aislada...")
 sd.play(muestras_beamformed_denoised, sample_rate)
 sd.wait()  # Se queda esperando hasta que acabe el audio
 print("Reproducción terminada.")
-´´´
+```
 
 

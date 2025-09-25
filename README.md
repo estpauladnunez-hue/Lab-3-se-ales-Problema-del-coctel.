@@ -40,7 +40,9 @@ plt.semilogx(freqs, np.abs(fft_values[:N//2]))
 plt.title("Espectro de Frecuencia")
 ```
 1.Forma de onda en el tiempo → permite observar cómo varía la amplitud de la señal con el tiempo.
+
 2.Espectro de frecuencias (FFT) → muestra la distribución de la energía en función de las frecuencias presentes en la señal.
+
 De esto obtuvimos como resultado una imagen con dos gráficas por cada micrófono (forma de onda y espectro de frecuencia) y de las cuales pudimos observar cómo cada grabación presentaba diferentes características de amplitud y contenido en frecuencia.
 <img width="1189" height="593" alt="image" src="https://github.com/user-attachments/assets/0130dc15-c414-46d6-b915-d7b7e92002d5" />
 

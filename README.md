@@ -105,10 +105,14 @@ print("Reproducción terminada.")
 
 
   microfono 1
+  
   Señal original:
 Frecuencia media: 1679.32 Hz
+
 SNR: -3.61 dB (ruido domina la señal)
+
 Desviación estándar: 0.1328 (alta variabilidad por ruido)
+
 Señal filtrada:
 Frecuencia media: 2267.83 Hz
 SNR: 120.42 dB (señal muy limpia)

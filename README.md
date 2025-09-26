@@ -103,6 +103,39 @@ print("Reproducción terminada.")
 5.	En el análisis de frecuencia, todas las señales mostraron concentración de energía en el rango 100 Hz–3 kHz, característico de la voz humana, con picos alrededor de 100–300 Hz correspondientes al fundamental y armónicos.
 6.	La práctica simuló adecuadamente el problema de la fiesta de cóctel, ya que los micrófonos captaron mezclas de varias voces. Esto permitió comprender la importancia de aplicar técnicas de procesamiento digital como FFT, beamforming o ICA para aislar una fuente específica.
 
+
+  microfono 1
+  Señal original:
+Frecuencia media: 1679.32 Hz
+SNR: -3.61 dB (ruido domina la señal)
+Desviación estándar: 0.1328 (alta variabilidad por ruido)
+Señal filtrada:
+Frecuencia media: 2267.83 Hz
+SNR: 120.42 dB (señal muy limpia)
+Desviación estándar: 0.0494 (señal más estable)
+Análisis: El filtrado incrementa drásticamente el SNR y reduce la variabilidad de la señal, haciendo que la voz se conserve más clara y con menos interferencias.
+
+Microfono 2
+Señal original:
+Frecuencia media: 1566.66 Hz
+SNR: -2.13 dB (ruido sigue predominando)
+Desviación estándar: 0.1169
+Señal filtrada:
+Frecuencia media: 2202.95 Hz
+SNR: 113.52 dB
+Desviación estándar: 0.0377
+Análisis: La señal original tenía fuerte presencia de ruido, pero tras el filtrado la claridad mejora notablemente. Aunque el SNR final es un poco menor que en los otros micrófonos, sigue siendo suficientemente alto para un análisis confiable.
+
+Microfono 3
+Señal original:
+Frecuencia media: 2433.60 Hz
+SNR: -4.26 dB (el peor de todos, mucho ruido)
+Desviación estándar: 0.0624
+Señal filtrada:
+Frecuencia media: 3497.91 Hz
+SNR: 126.96 dB (el mejor resultado después del filtrado)
+Desviación estándar: 0.0212
+Análisis: Aunque originalmente este micrófono capturó la señal más contaminada por ruido, después del filtrado es el que alcanza el SNR más alto, mostrando la mejor calidad final de señal.
 # Librerías utilizadas
 
 numpy

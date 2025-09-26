@@ -96,17 +96,21 @@ sd.wait()  # Se queda esperando hasta que acabe el audio
 print("Reproducción terminada.")
 ```
 
-
+Ademas tambien se obtuvieron las graficas en funcion del tiempo y de la frecuencia para cada microfono con la señal ya filtrada en cada caso, logrando hacer comparaciones en sus metricas de frecuencia y en todos los datos observados a continuacion.
 #  MICROFONO 1:
+<img width="1197" height="593" alt="image" src="https://github.com/user-attachments/assets/562ad4c8-a844-42bc-b56b-f23049ccd965" />
+
+<img width="385" height="252" alt="image" src="https://github.com/user-attachments/assets/e8c6ebd0-f164-4030-8b3b-1c766de7b6ad" />
+
   
- # Señal original:
+ ## Señal original:
 Frecuencia media: 1679.32 Hz
  
 SNR: -3.61 dB (ruido domina la señal)
 
 Desviación estándar: 0.1328 (alta variabilidad por ruido)
 
-# Señal filtrada:
+## Señal filtrada:
 Frecuencia media: 2267.83 Hz
 
 SNR: 120.42 dB (señal muy limpia)
@@ -116,15 +120,19 @@ Desviación estándar: 0.0494 (señal más estable)
 Análisis: El filtrado incrementa drásticamente el SNR y reduce la variabilidad de la señal, haciendo que la voz se conserve más clara y con menos interferencias.
 
 # MICROFONO 2:
+<img width="1189" height="593" alt="image" src="https://github.com/user-attachments/assets/9ee1a732-fbb9-4626-984f-34ed20dcd03d" />
 
-# Señal original:
+<img width="380" height="245" alt="image" src="https://github.com/user-attachments/assets/26018843-fb1c-42dd-aa15-e01f087d4e3a" />
+
+
+## Señal original:
 Frecuencia media: 1566.66 Hz
 
 SNR: -2.13 dB (ruido sigue predominando)
 
 Desviación estándar: 0.1169
 
-# Señal filtrada:
+## Señal filtrada:
 Frecuencia media: 2202.95 Hz
 
 SNR: 113.52 dB
@@ -134,15 +142,19 @@ Desviación estándar: 0.0377
 Análisis: La señal original tenía fuerte presencia de ruido, pero tras el filtrado la claridad mejora notablemente. Aunque el SNR final es un poco menor que en los otros micrófonos, sigue siendo suficientemente alto para un análisis confiable.
 
 # MICROFONO 3:
+<img width="1189" height="593" alt="image" src="https://github.com/user-attachments/assets/256f9ce7-5b83-4d06-89d1-7bbc5aa5f6e7" />
 
-# Señal original:
+<img width="382" height="247" alt="image" src="https://github.com/user-attachments/assets/e1facc84-4a81-425e-aa3c-cd899a770b07" />
+
+
+## Señal original:
 Frecuencia media: 2433.60 Hz
 
 SNR: -4.26 dB (el peor de todos, mucho ruido)
 
 Desviación estándar: 0.0624
 
-# Señal filtrada:
+## Señal filtrada:
 Frecuencia media: 3497.91 Hz
 
 SNR: 126.96 dB (el mejor resultado después del filtrado)

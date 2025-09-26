@@ -95,25 +95,18 @@ sd.play(muestras_beamformed_denoised, sample_rate)
 sd.wait()  # Se queda esperando hasta que acabe el audio
 print("Reproducción terminada.")
 ```
-# Conclusiones
-1.	La práctica permitió evidenciar el efecto de la posición relativa entre micrófonos y hablantes en la calidad de la señal registrada. A menor distancia, mayor amplitud y mejor relación señal/ruido (SNR).
-2.	El micrófono 2, ubicado a 32,5 cm, fue el que registró la señal con mayor claridad y energía, confirmando que la proximidad al hablante favorece la captura de los armónicos y la inteligibilidad de la voz.
-3.	El micrófono 1, a 35 cm, presentó una señal con características similares, aunque con menor intensidad respecto al micrófono 2, mostrando que pequeñas variaciones de distancia pueden impactar el resultado.
-4.	El micrófono 3, situado a 66 cm, captó una señal más débil y con mayor proporción de ruido, lo que demuestra cómo la distancia aumenta la atenuación y dificulta la separación posterior de las fuentes.
-5.	En el análisis de frecuencia, todas las señales mostraron concentración de energía en el rango 100 Hz–3 kHz, característico de la voz humana, con picos alrededor de 100–300 Hz correspondientes al fundamental y armónicos.
-6.	La práctica simuló adecuadamente el problema de la fiesta de cóctel, ya que los micrófonos captaron mezclas de varias voces. Esto permitió comprender la importancia de aplicar técnicas de procesamiento digital como FFT, beamforming o ICA para aislar una fuente específica.
 
 
-  microfono 1:
+#  MICROFONO 1:
   
-  Señal original:
+ # Señal original:
 Frecuencia media: 1679.32 Hz
  
 SNR: -3.61 dB (ruido domina la señal)
 
 Desviación estándar: 0.1328 (alta variabilidad por ruido)
 
-Señal filtrada:
+# Señal filtrada:
 Frecuencia media: 2267.83 Hz
 
 SNR: 120.42 dB (señal muy limpia)
@@ -122,17 +115,16 @@ Desviación estándar: 0.0494 (señal más estable)
 
 Análisis: El filtrado incrementa drásticamente el SNR y reduce la variabilidad de la señal, haciendo que la voz se conserve más clara y con menos interferencias.
 
-Microfono 2:
+# MICROFONO 2:
 
-Señal original:
-
+# Señal original:
 Frecuencia media: 1566.66 Hz
 
 SNR: -2.13 dB (ruido sigue predominando)
 
 Desviación estándar: 0.1169
 
-Señal filtrada:
+# Señal filtrada:
 Frecuencia media: 2202.95 Hz
 
 SNR: 113.52 dB
@@ -141,16 +133,16 @@ Desviación estándar: 0.0377
 
 Análisis: La señal original tenía fuerte presencia de ruido, pero tras el filtrado la claridad mejora notablemente. Aunque el SNR final es un poco menor que en los otros micrófonos, sigue siendo suficientemente alto para un análisis confiable.
 
-Microfono 3:
+# MICROFONO 3:
 
-Señal original:
+# Señal original:
 Frecuencia media: 2433.60 Hz
 
 SNR: -4.26 dB (el peor de todos, mucho ruido)
 
 Desviación estándar: 0.0624
 
-Señal filtrada:
+# Señal filtrada:
 Frecuencia media: 3497.91 Hz
 
 SNR: 126.96 dB (el mejor resultado después del filtrado)
@@ -166,6 +158,15 @@ Micrófono 3: mejora de +131.22 dB
 
 Valor promedio:
 123.63 dB
+
+
+# Conclusiones
+1.	La práctica permitió evidenciar el efecto de la posición relativa entre micrófonos y hablantes en la calidad de la señal registrada. A menor distancia, mayor amplitud y mejor relación señal/ruido (SNR).
+2.	El micrófono 2, ubicado a 32,5 cm, fue el que registró la señal con mayor claridad y energía, confirmando que la proximidad al hablante favorece la captura de los armónicos y la inteligibilidad de la voz.
+3.	El micrófono 1, a 35 cm, presentó una señal con características similares, aunque con menor intensidad respecto al micrófono 2, mostrando que pequeñas variaciones de distancia pueden impactar el resultado.
+4.	El micrófono 3, situado a 66 cm, captó una señal más débil y con mayor proporción de ruido, lo que demuestra cómo la distancia aumenta la atenuación y dificulta la separación posterior de las fuentes.
+5.	En el análisis de frecuencia, todas las señales mostraron concentración de energía en el rango 100 Hz–3 kHz, característico de la voz humana, con picos alrededor de 100–300 Hz correspondientes al fundamental y armónicos.
+6.	La práctica simuló adecuadamente el problema de la fiesta de cóctel, ya que los micrófonos captaron mezclas de varias voces. Esto permitió comprender la importancia de aplicar técnicas de procesamiento digital como FFT, beamforming o ICA para aislar una fuente específica.
 
 
 
